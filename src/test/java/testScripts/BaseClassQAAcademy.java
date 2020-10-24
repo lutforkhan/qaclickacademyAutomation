@@ -12,6 +12,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -37,9 +38,9 @@ public class BaseClassQAAcademy {
 		//WebDriver driver=new FirefoxDriver();
 		//WebDriver driver=new FirefoxDriver();
 		//driver.get("https://github.com/");
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		//driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         // Maximize window
-        driver.manage().window().maximize();
+       // driver.manage().window().maximize();
         //Navigate to the demo site
        // driver.get("https://www.toolsqa.com/selenium-training/");
         System.out.println("url="+homePageUrl);
@@ -85,10 +86,23 @@ public class BaseClassQAAcademy {
 		 else if(browser.equalsIgnoreCase("htmlunit")) {
 			 
 			 System.setProperty("webdriver.htmlunit.driver",".\\drivers\\htmlunit.exe");
-				WebDriver driver=new HtmlUnitDriver();
+			 HtmlUnitDriver driver=new HtmlUnitDriver();
 				this.driver=driver;
 
 		 		}
+		 else if(browser.equalsIgnoreCase("firefox")) {
+					 
+					 System.setProperty("webdriver.gecko.driver",".\\drivers\\geckodriver.exe");
+						WebDriver driver=new FirefoxDriver();
+						this.driver=driver;
+
+				 		}
+		 else {
+			 
+			 System.out.println("Select driver in config file");
+		 }
+
+		 
 		 
 	 }
 	 
@@ -107,8 +121,8 @@ public class BaseClassQAAcademy {
 		 }
 		 
 		 this.browser=prop.getProperty("browser").toString();
-		 this.user=prop.getProperty("user");
-		 this.password=prop.getProperty("password");
+		 this.user=prop.getProperty("user").toString();
+		 this.password=prop.getProperty("password").toString();
 		 
 		 
 		 }catch (Exception e) {

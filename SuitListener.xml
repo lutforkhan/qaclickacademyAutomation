@@ -5,7 +5,6 @@
 <listener class-name="listener.TestNGListener"></listener>
 </listeners>
 
-
   <test thread-count="5" name="Test">
     <classes>
       <class name="testScripts.QAClickAcademyHomeTest"/>
