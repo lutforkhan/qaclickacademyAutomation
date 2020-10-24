@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="1" total="3" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="29351" started-at="2020-10-23T20:05:09Z" finished-at="2020-10-23T20:05:39Z">
+  <suite name="Suite" duration-ms="29491" started-at="2020-10-23T22:51:11Z" finished-at="2020-10-23T22:51:41Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="29351" started-at="2020-10-23T20:05:09Z" finished-at="2020-10-23T20:05:39Z">
+    <test name="Test" duration-ms="29491" started-at="2020-10-23T22:51:11Z" finished-at="2020-10-23T22:51:41Z">
       <class name="testScripts.QAClickAcademyHomeTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testScripts.QAClickAcademyHomeTest@2038ae61]" name="setUp" is-config="true" duration-ms="13644" started-at="2020-10-23T16:05:09Z" finished-at="2020-10-23T16:05:23Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testScripts.QAClickAcademyHomeTest@2038ae61]" name="setUp" is-config="true" duration-ms="13603" started-at="2020-10-23T18:51:11Z" finished-at="2020-10-23T18:51:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="selectRadioButtons()[pri:0, instance:testScripts.QAClickAcademyHomeTest@2038ae61]" name="selectRadioButtons" duration-ms="6475" started-at="2020-10-23T16:05:23Z" finished-at="2020-10-23T16:05:29Z">
+        <test-method status="PASS" signature="selectRadioButtons()[pri:0, instance:testScripts.QAClickAcademyHomeTest@2038ae61]" name="selectRadioButtons" duration-ms="6518" started-at="2020-10-23T18:51:25Z" finished-at="2020-10-23T18:51:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- selectRadioButtons -->
-        <test-method status="FAIL" signature="selectListOption()[pri:0, instance:testScripts.QAClickAcademyHomeTest@2038ae61]" name="selectListOption" duration-ms="2112" started-at="2020-10-23T16:05:29Z" finished-at="2020-10-23T16:05:31Z">
+        <test-method status="FAIL" signature="selectListOption()[pri:0, instance:testScripts.QAClickAcademyHomeTest@2038ae61]" name="selectListOption" duration-ms="2123" started-at="2020-10-23T18:51:31Z" finished-at="2020-10-23T18:51:33Z">
           <exception class="junit.framework.AssertionFailedError">
             <full-stacktrace>
               <![CDATA[junit.framework.AssertionFailedError
@@ -53,11 +53,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- selectListOption -->
-        <test-method status="PASS" signature="selectOptionButtons()[pri:0, instance:testScripts.QAClickAcademyHomeTest@2038ae61]" name="selectOptionButtons" duration-ms="6243" started-at="2020-10-23T16:05:32Z" finished-at="2020-10-23T16:05:38Z">
+        <test-method status="PASS" signature="selectOptionButtons()[pri:0, instance:testScripts.QAClickAcademyHomeTest@2038ae61]" name="selectOptionButtons" duration-ms="6246" started-at="2020-10-23T18:51:34Z" finished-at="2020-10-23T18:51:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- selectOptionButtons -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:testScripts.QAClickAcademyHomeTest@2038ae61]" name="teardown" is-config="true" duration-ms="318" started-at="2020-10-23T16:05:38Z" finished-at="2020-10-23T16:05:39Z">
+        <test-method status="PASS" signature="teardown()[pri:0, instance:testScripts.QAClickAcademyHomeTest@2038ae61]" name="teardown" is-config="true" duration-ms="428" started-at="2020-10-23T18:51:40Z" finished-at="2020-10-23T18:51:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

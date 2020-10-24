@@ -12,6 +12,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
@@ -27,13 +28,12 @@ public class BaseClassQAAcademy {
 	
 	@BeforeTest
 	public  void setUp()
-	{	//###########################---------------Setting driver property-----------##############
-		System.setProperty("webdriver.chrome.driver",".\\drivers\\chromedriver.exe");	
-		//System.out.println("I am in setProperty statement ");
-		//System.setProperty("webdriver.gecko.driver",".\\drivers\\geckodriver.exe");
-		//##################--------------------Creating driver object-----##########################
-		WebDriver driver=new ChromeDriver();
+	
+	{	
 		readPropertyFile();
+		setBrowser(browser);
+		System.out.println("this.browser "+this.browser);
+		
 		//WebDriver driver=new FirefoxDriver();
 		//WebDriver driver=new FirefoxDriver();
 		//driver.get("https://github.com/");
@@ -47,7 +47,7 @@ public class BaseClassQAAcademy {
         String title=driver.getTitle();
         System.out.println(title);
         
-		this.driver=driver;
+		//this.driver=driver;
 			
 		}
 	
@@ -62,7 +62,6 @@ public class BaseClassQAAcademy {
 	
 	public static void takeScreenShot(String methodName) throws Exception {
 		
-		
 		 File file=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 	        File destfile=new File(".\\ScreenShots\\"+methodName+".png");
 	        FileUtils.copyFile(file, destfile );
@@ -73,6 +72,23 @@ public class BaseClassQAAcademy {
 	 public void setBrowser(String browser) {
 		 
 		 
+		 
+		 if (browser.equalsIgnoreCase("chrome")) {
+			
+		//###########################---------------Setting driver property-----------##############
+			System.setProperty("webdriver.chrome.driver",".\\drivers\\chromedriver.exe");
+			WebDriver driver=new ChromeDriver();
+			this.driver=driver;
+			//System.out.println("I am in setProperty statement ");
+			//System.setProperty("webdriver.gecko.driver",".\\drivers\\geckodriver.exe");
+		 }	
+		 else if(browser.equalsIgnoreCase("htmlunit")) {
+			 
+			 System.setProperty("webdriver.htmlunit.driver",".\\drivers\\htmlunit.exe");
+				WebDriver driver=new HtmlUnitDriver();
+				this.driver=driver;
+
+		 		}
 		 
 	 }
 	 
@@ -87,10 +103,12 @@ public class BaseClassQAAcademy {
 		 String url=prop.getProperty("homePageUrl").toString();
 		 
 		 if (url !=null) {this.homePageUrl=url;
-		 log.info("HomePahe url ="+url);}
-		 this.browser=prop.getProperty(browser);
-		 this.user=prop.getProperty(user);
-		 this.password=prop.getProperty(password);
+		 //log.info("HomePahe url ="+url);
+		 }
+		 
+		 this.browser=prop.getProperty("browser").toString();
+		 this.user=prop.getProperty("user");
+		 this.password=prop.getProperty("password");
 		 
 		 
 		 }catch (Exception e) {
